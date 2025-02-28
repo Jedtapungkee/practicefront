@@ -1,0 +1,53 @@
+/* navbar.css */
+.Nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #6242ED; 
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 1500px;
+  }
+  
+  .LOGO {
+    display: flex; /* ใช้ flex ให้จัดกึ่งกลาง */
+    align-items: center; 
+    gap: 10px; /* ปรับช่องว่างถ้าจำเป็น */
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none; /* ลบเส้นขีดใต้ */
+    height: 100%; /* ให้ขนาดเต็ม navbar */
+}
+
+  .containers {
+    display: flex;
+    gap: 30px;
+    justify-content: space-around;
+    position: relative;
+  }
+  
+  .containers a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    position: relative;
+    padding-bottom: 5px;
+    margin: 10px;
+  }
+  
+
+  
+  /* เพิ่มสไตล์ให้กับลิงก์ที่ถูกเลือก */
+ .nav-underline {
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  background: white;
+  transition: all 0.3s ease-in-out;
+ }
