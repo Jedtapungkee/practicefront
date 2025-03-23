@@ -6,6 +6,8 @@ import Create from "./pages/CreateCustomer";
 import Update from "./pages/UpdateCus";
 import Products from "./pages/Products";
 import Createprod from "./pages/CreateProduct";
+import UpdateProd from "./pages/UpdateProd";
+import "./App.css";
 
 
 function App() {
@@ -18,6 +20,7 @@ function App() {
         <Route path="/update/:id" element={<Update />} />
         <Route path="/products" element={<Products />} />
         <Route path="/createprod" element={<Createprod />} />
+        <Route path="/updateprod/:id" element={<UpdateProd />} />
       </Routes>
       </Router>
   );

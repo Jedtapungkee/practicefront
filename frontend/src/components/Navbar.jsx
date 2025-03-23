@@ -1,45 +1,30 @@
-import { Link, useLocation } from "react-router-dom";
-import { useEffect, useState, useRef } from "react";
-import "./../styles/Navbar.css";
+import React from 'react'
+import GooeyNav from './GooeyNav/GooeyNav'
+
+
+const items = [
+  { label: "Customers", href: "/" },
+  { label: "CreateCustomers", href: "/create" },
+  { label: "Products", href: "/products" },
+  { label: "CreateProducts", href: "/createprod" },
+];
 
 const Navbar = () => {
-  const location = useLocation();
-  const [underlineStyle, setUnderlineStyle] = useState({});
-  const navRef = useRef(null);
-
-  useEffect(() => {
-    // Set underline style
-    const activeLink = document.querySelector(".containers a.active");
-    if (activeLink && navRef.current) { 
-      const { offsetLeft, offsetWidth } = activeLink;
-      setUnderlineStyle({
-        left: offsetLeft + "px",
-        width: offsetWidth + "px",
-      });
-    }
-  }, [location.pathname]);
-
-
   return (
-    <nav className="Nav">
-      <Link to="/" className="LOGO">mini store</Link>
-      <div className="containers" ref={navRef}>
-        <Link to="/" className={location.pathname === "/" ? "active" : ""}>
-          Customers
-        </Link>
-        <Link to="/create" className={location.pathname === "/create" ? "active" : ""}>
-          create customers
-        </Link>
-        <Link to="/products" className={location.pathname === "/products" ? "active" : ""}>
-          product
-        </Link>
-        <Link to="/createprod" className={location.pathname === "/createprod" ? "active" : ""}>
-          create product
-        </Link>
-        <div className="nav-underline" style={underlineStyle}></div>
-      </div>
-    </nav>
-  );
-};
+    <div style={{ height: '50px', position: 'relative' }} className='flex justify-between items-center bg-blue-800'>
+  <h1 className='text-2xl text-white'>Ministore</h1>
+  <GooeyNav
+    items={items}
+    animationTime={200}
+    pCount={15}
+    minDistance={20}
+    maxDistance={42}
+    maxRotate={75}
+    colors={[1, 2, 3, 1, 2, 3, 1, 4]}
+    timeVariance={300}
+  />
+</div>
+  )
+}
 
-export default Navbar;
+export default Navbar
